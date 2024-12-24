@@ -16,7 +16,7 @@ while True:
     for contour in contours:
         epsilon = 0.02 * cv2.arcLength(contour, True)
         approx = cv2.approxPolyDP(contour, epsilon, True)
-        if len(approx) == 4:  # Rectangle
+        if len(approx) == 4:
             area = cv2.contourArea(approx)
             if area > max_area:
                 max_area = area
@@ -32,9 +32,9 @@ while True:
                 print("Barcode data:", info)
             break
 
-        image_with_paper_border = frame.copy()
-        cv2.drawContours(image_with_paper_border, [paper_contour], -1, (0, 0, 255), 3)
-        cv2.imshow("Video Stream", image_with_paper_border)
+        image_with_border = frame.copy()
+        cv2.drawContours(image_with_border, [paper_contour], -1, (0, 0, 255), 3)
+        cv2.imshow("Video Stream", image_with_border)
     else:
         cv2.imshow("Video Stream", frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
