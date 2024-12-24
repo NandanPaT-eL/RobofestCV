@@ -29,7 +29,6 @@ for image_path in images:
         refined_corners = cv.cornerSubPix(gray, corners, (11, 11), (-1, -1), criteria)
         imgPt.append(refined_corners)
 
-        # Draw and display corners
         cv.drawChessboardCorners(img, chessSize, refined_corners, ret)
         cv.imshow('Chessboard corners', img)
         cv.waitKey(500)
@@ -38,7 +37,6 @@ for image_path in images:
 
 cv.destroyAllWindows()
 
-# Perform camera calibration and save data
 if len(objPt) > 0 and len(imgPt) > 0:
     ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(objPt, imgPt, gray.shape[::-1], None, None)
 
@@ -56,4 +54,3 @@ if len(objPt) > 0 and len(imgPt) > 0:
         print("Camera calibration failed.")
 else:
     print("Not enough valid image points for calibration.")
-
