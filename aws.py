@@ -2,7 +2,7 @@ import boto3
 from botocore.exceptions import NoCredentialsError
 
 AWS_ACCESS_KEY_ID = "AKIAZQ3DTYDUZCZCDGWH"
-AWS_SECRET_ACCESS_KEY = # Amazon Secret key
+AWS_SECRET_ACCESS_KEY = "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"
 AWS_REGION = "eu-north-1" 
 BUCKET_NAME = "urmil"
 FILE_PATH = "Videos/video_1.mp4"

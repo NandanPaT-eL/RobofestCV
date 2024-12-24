@@ -2,7 +2,7 @@ import numpy as np
 import cv2 as cv
 import glob
 
-chessSize = (8, 6)
+chessSize = (9, 5)
 
 criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
@@ -12,7 +12,7 @@ obj[:, :2] = np.mgrid[0:chessSize[0], 0:chessSize[1]].T.reshape(-1, 2)
 objPt = []  # 3D points
 imgPt = []  # 2D points
 
-images = glob.glob("Assets/*.jpg")
+images = glob.glob("Assets/*.png")
 
 for image_path in images:
     print("Processing: ", image_path)
@@ -31,7 +31,7 @@ for image_path in images:
 
         cv.drawChessboardCorners(img, chessSize, refined_corners, ret)
         cv.imshow('Chessboard corners', img)
-        cv.waitKey(500)
+        cv.waitKey(0)
     else:
         print("Chessboard corners not found in ", image_path)
 
