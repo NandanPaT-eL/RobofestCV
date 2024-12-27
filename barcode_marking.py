@@ -6,7 +6,8 @@ import numpy as np
 # dist = data["distortion_coefficients"]
 # print("Calibration data loaded successfully.")
 
-cap = cv2.VideoCapture(0)
+stream_url = "udp://192.168.0.2:8554"
+cap = cv2.VideoCapture(stream_url, cv2.CAP_FFMPEG)
 
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
