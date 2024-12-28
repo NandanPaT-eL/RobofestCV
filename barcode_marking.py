@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import time
 
 # data = np.load("calibration_IMX335.npz")
 # mtx = data["camera_matrix"]
@@ -18,7 +19,7 @@ detector = cv2.barcode_BarcodeDetector()
 
 while True:
     ret, frame = cap.read()
-    
+
     # undistorted_frame = cv2.remap(frame, map1, map2, interpolation=cv2.INTER_LINEAR)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     ret, thresh = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY)
