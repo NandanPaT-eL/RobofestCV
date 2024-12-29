@@ -2,7 +2,7 @@ import cv2
 import os
 import csv
 
-image_directory = "Barcode"
+image_directory = "Barcode_Data_q1"
 output_csv_file = "output.csv"
 
 detector = cv2.barcode_BarcodeDetector()

@@ -3,7 +3,7 @@ import time
 import os
 
 # Directory to save captured images
-dir = "Barcode_Data"
+dir = "Barcode_Data_q1"
 
 # Video stream URL
 url = "udp://192.168.0.2:8554"
