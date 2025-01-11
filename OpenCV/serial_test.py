@@ -2,6 +2,18 @@ from flask import Flask, request
 from flask_cors import CORS
 import smbus  # For I2C communication
 import threading
+import RPi.GPIO as GPIO
+import time
+
+GPIO_PIN = 18
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(GPIO_PIN, GPIO.OUT)
+try:
+    GPIO.output(GPIO_PIN, GPIO.LOW)
+    time.sleep(0.5)
+    GPIO.output(GPIO_PIN, GPIO.HIGH)
+finally:
+    GPIO.cleanup()
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
